@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -8,8 +8,9 @@ public:
     smiley();
     smiley(double, double);
     ~smiley();
-    void set(double, double);
-    void square();
+    void setR1(double);
+    void setR2(double);
+    int square();
     void print_sqrt();
 };
 
@@ -29,17 +30,23 @@ smiley::~smiley() {
     cout << "Деструктор викликаний для об'єкта " << this << endl;
 }
 
-void smiley::set(double a, double b) {
-    this->R1 = a;
-    this->r2 = b;
+void smiley::setR1(double a) {
+    R1 = a;
 }
 
-void smiley::square() {
-    cout << "Площа= " << R1 * R1 * 2 * 3.14 << endl;
+void smiley::setR2(double a) {
+    r2 = a;
+}
+
+int smiley::square() {
+    int S;
+    S = R1 * R1 * 2 * 3.14;
+    cout << "Площа= " << S << endl;
+    return S;
 }
 
 void smiley::print_sqrt() {
-    cout << "Радіус смайлика= " << R1 <<"\nРадіус очей смайлика= "<< r2 << "\nПлоща смайлика без очей: " << 2 * 3.14 * R1 * R1 - 3.14 * r2 * r2 * 4 << endl;
+    cout << "Радіус смайлика= " << R1 <<"\nРадіус очей смайлика= "<< r2 << "\nПлоща смайлика без очей: " << square() - 3.14 * r2 * r2 * 4 << endl;
 }
 
 int main() {
@@ -48,7 +55,8 @@ int main() {
     a = smiley::smiley(4, 1);
     a.smiley::square();
     a.smiley::print_sqrt();
-    a.smiley::set(5, 2);
+    a.smiley::setR1(5);
+    a.smiley::setR2(2);
     a.smiley::square();
     a.smiley::print_sqrt();
 }
