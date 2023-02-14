@@ -39,7 +39,7 @@ void smiley::setR2(double a) {
 }
 
 int smiley::square() {
-    int S;
+    double S;
     S = R1 * R1 * 2 * 3.14;
     cout << "Площа= " << S << endl;
     return S;
