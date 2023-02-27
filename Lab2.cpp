@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -67,7 +67,9 @@ int main()
     cout << "k1:" << endl;
     k1.print_val();
     frd(k1, k2);
+    cout << "k2:" << endl;
+    k2.print_val();
     cout << "k3:" << endl;
-    k3 = frd(k1,k2);
+    k3 = frd(k1, k2);
     k3.print_val();
 }
