@@ -66,7 +66,6 @@ int main()
     k1.rkonus(13);
     cout << "k1:" << endl;
     k1.print_val();
-    frd(k1, k2);
     cout << "k2:" << endl;
     k2.print_val();
     cout << "k3:" << endl;
