@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <Windows.h>
 #include <fstream>
 #include <string>
@@ -65,6 +65,7 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     int n = 0, m, p, i;
+    bool t = 0;
     string str, ln, fn;
     data();
     ifstream file("data.txt");
@@ -88,7 +89,6 @@ int main()
         cout << "Ведіть прізвище та ім'я " << endl;
         cin >> ln;
         cin >> fn;
-        int t = 0;
         for (int j = 0; j < n; j++) {
             if (S[j].lname() == ln && S[j].fname() == fn) {
                 cout << "Математика: " << S[j].math() << "; Фізика: " << S[j].phisics() << "; Інформатика: " << S[j].informatics() << "." << endl;
