@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <Windows.h>
 
 using namespace std;
@@ -7,12 +7,12 @@ class Numbers {
 private:
     int* x;
 public:
-    Numbers(int& size);
+    Numbers(int size);
     ~Numbers();
     int* get() { return x; }
 };
 
-Numbers::Numbers(int& size) {
+Numbers::Numbers(int size) {
     x = new int[size];
     cout << "Видiлення пам'ятi " << x << endl;
     for (int i = 0; i < size; i++) {
@@ -31,7 +31,7 @@ Numbers::~Numbers() {
     x = 0;
 }
 
-int multi(int& size, int* x) {
+int multi(int size, int* x) {
     int y = 1;
     for (int i = 1; i < size; i += 2) {
         y *= x[i];
@@ -42,7 +42,6 @@ int multi(int& size, int* x) {
 int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    int size = 8;
-    Numbers a = Numbers(size);
-    cout << multi(size, a.get()) << endl;
+    Numbers a = Numbers(8);
+    cout << multi(8, a.get()) << endl;
 }
